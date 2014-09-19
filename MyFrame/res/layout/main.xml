@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:gravity="center">
+    
+
+    <Button android:id="@+id/httpBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="testHttp"
+        android:layout_marginTop="20dp"/>
+    
+    
+    
+    <Button android:id="@+id/xListViewBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="testXListView"
+        android:layout_marginTop="20dp"/>
+    
+    
+    <Button android:id="@+id/mutiDownBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="testMutiDown"
+        android:layout_marginTop="20dp"/>
+    
+     <Button android:id="@+id/mutiUploadBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="testMutiUpLoad"
+        android:layout_marginTop="20dp"/>
+    
+</LinearLayout>

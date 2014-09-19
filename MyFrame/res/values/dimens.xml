@@ -1,0 +1,11 @@
+<resources>
+    <!-- 标题字大小 -->
+    <dimen name="titleTextSize">21sp</dimen>
+    <dimen name="textSize">16sp</dimen>
+    <dimen name="textSizeBtn">18sp</dimen>
+    
+    <dimen name="header_height">60dp</dimen>
+    <dimen name="footer_height">90dp</dimen>
+    <dimen name="footer_padding">10dp</dimen>
+    
+</resources>
