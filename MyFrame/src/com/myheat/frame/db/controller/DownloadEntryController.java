@@ -4,13 +4,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
-
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.stmt.QueryBuilder;
 import com.myheat.frame.db.DBController;
 import com.myheat.frame.db.DBNotInitializeException;
 import com.myheat.frame.entities.DownloadEntry;
-import com.myheat.frame.tool.DebugLog;
 import com.myheat.frame.tool.TextUtil;
 
 /**
