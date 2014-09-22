@@ -70,12 +70,18 @@
 
         <activity android:name=".XListViewActivity"/>
         <activity android:name=".MainActivity"/>
+        <activity android:name=".MutiDownActivity"/>
+        <activity android:name=".HttpTestActivity"/>
+        <activity android:name=".MutiUploadActivity"/>
+        <activity android:name=".NotificationActivity"/>
+        
+        
         
         <service android:name=".services.MyService"/>
         
         <!-- Needed to check when the network connection changes -->
         <receiver
-            android:name="com.myheat.frame.http.tool.ConnectionChangeReceiver"
+            android:name=".http.tool.ConnectionChangeReceiver"
             android:label="NetworkConnection" >
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />

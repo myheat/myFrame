@@ -27,14 +27,6 @@ public class XListViewActivity extends Activity implements XListView.IXListViewL
     private int mIndex = 0;
     private int mRefreshIndex = 0;
 
-    public static void launch(Context context) {
-        Intent intent = new Intent();
-        intent.setClass(context, XListViewActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);
-
-        context.startActivity(intent);
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
