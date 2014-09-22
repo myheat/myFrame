@@ -1,12 +1,15 @@
-package com.myheat.frame.download;
+package com.myheat.frame.services;
 
 import java.util.HashMap;
 import java.util.Map.Entry;
 
 import com.myheat.frame.common.Constants;
 import com.myheat.frame.db.controller.DownloadEntryController;
+import com.myheat.frame.download.DataChanger;
+import com.myheat.frame.download.DownloadTask;
 import com.myheat.frame.entities.DownloadEntry;
 import com.myheat.frame.entities.DownloadStatus;
+import com.myheat.frame.tool.DebugLog;
 
 import android.app.Service;
 import android.content.BroadcastReceiver;
@@ -26,7 +29,6 @@ public class DownloadService extends Service {
 
 	private DataChanger mDownloadChanger;
 	
-	private ConnectionBroadcast connectionReceiver;
 
 	@Override
 	public IBinder onBind(Intent arg0) {
@@ -36,11 +38,6 @@ public class DownloadService extends Service {
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		connectionReceiver = new ConnectionBroadcast();
-		IntentFilter intentFilter = new IntentFilter();
-		intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
-//		registerReceiver(connectionReceiver, intentFilter);
-		
 		// initialize DataChanger
 		mDownloadChanger = DataChanger.getInstance();
 		// query DownloadEntry history from db
@@ -193,7 +190,6 @@ public class DownloadService extends Service {
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
-//		unregisterReceiver(connectionReceiver);
 	}
 
 	protected void checkStatus(DownloadEntry entry) {
@@ -219,19 +215,4 @@ public class DownloadService extends Service {
 		}
 	}
 	
-	
-	class ConnectionBroadcast extends BroadcastReceiver {
-
-		@Override
-		public void onReceive(Context context, Intent intent) {
-			ConnectivityManager connectMgr = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
-			NetworkInfo mobNetInfo = connectMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-			NetworkInfo wifiNetInfo = connectMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-			if (wifiNetInfo != null && wifiNetInfo.isConnected()) {
-				recoverDownload();
-			} else {
-				interruptDownload();
-			}
-		}
-	}
 }

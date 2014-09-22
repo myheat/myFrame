@@ -2,12 +2,20 @@ package com.myheat.frame;
 
 import java.util.HashMap;
 import java.util.Map.Entry;
+
+import com.myheat.frame.db.DBController;
+import com.myheat.frame.db.DBNotInitializeException;
+import com.myheat.frame.db.controller.DownloadEntryController;
 import com.myheat.frame.download.DataWatcher;
 import com.myheat.frame.download.DownloadManager;
 import com.myheat.frame.entities.DownloadEntry;
+import com.myheat.frame.services.DownloadService;
+import com.myheat.frame.services.MyService;
 import com.myheat.frame.tool.DebugLog;
 import com.myheat.frame.tool.FileUtils;
+
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -54,6 +62,15 @@ public class MutiDownActivity extends Activity {
 		DownloadManager.getInstance(this);
 		// 创建下载目录
 		FileUtils.initFolders();
+		
+		try {
+		
+		DebugLog.d("DBController.getDB()=", "" + DBController.getDB());
+			
+		} catch (DBNotInitializeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		Button download1 = (Button) findViewById(R.id.download1);
 		download1.setOnClickListener(oc);

@@ -17,6 +17,7 @@ import com.j256.ormlite.support.DatabaseConnection;
 import com.j256.ormlite.table.DatabaseTableConfig;
 import com.j256.ormlite.table.TableUtils;
 import com.myheat.frame.entities.DownloadEntry;
+import com.myheat.frame.tool.DebugLog;
 
 /**
  * Database helper class used to manage the creation and upgrading of your

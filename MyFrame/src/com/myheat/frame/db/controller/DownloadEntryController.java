@@ -10,6 +10,7 @@ import com.j256.ormlite.stmt.QueryBuilder;
 import com.myheat.frame.db.DBController;
 import com.myheat.frame.db.DBNotInitializeException;
 import com.myheat.frame.entities.DownloadEntry;
+import com.myheat.frame.tool.DebugLog;
 import com.myheat.frame.tool.TextUtil;
 
 /**
@@ -102,13 +103,13 @@ public class DownloadEntryController {
 	 */
 	public static LinkedHashMap<String, DownloadEntry> queryAllUnCompletedRecord() {
 		LinkedHashMap<String, DownloadEntry> queue = null;
-		List<DownloadEntry> resultList = null;
+		List<DownloadEntry> resultList = new ArrayList<DownloadEntry>();
 		try {
 			QueryBuilder<DownloadEntry, String> queryBuilder = getDao()
 					.queryBuilder();
 			queryBuilder.orderBy(DownloadEntry.CREATE_TIME, false);
-
 			resultList = getDao().query(queryBuilder.prepare());
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (DBNotInitializeException e) {

@@ -102,6 +102,8 @@ public class MyService extends Service {
 		mNM = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 		apkDownLoadThread = new ApkDownLoadThread(this);
 		
+		
+		DebugLog.d("MyService", "onCreate");
 		// 通过RemoteViews 设置notification中View 的属性
 		view = new RemoteViews(this.getPackageName(),
 				R.layout.notification_pro);

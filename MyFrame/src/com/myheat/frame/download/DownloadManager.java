@@ -3,6 +3,7 @@ package com.myheat.frame.download;
 import com.myheat.frame.common.Constants;
 import com.myheat.frame.entities.DownloadEntry;
 import com.myheat.frame.entities.DownloadStatus;
+import com.myheat.frame.services.DownloadService;
 
 import android.content.Context;
 import android.content.Intent;

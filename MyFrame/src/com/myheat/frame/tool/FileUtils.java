@@ -23,8 +23,10 @@ public class FileUtils {
 	/** 路径:应用根目录 */
 	public static String SDCARDROOT = Environment.getExternalStorageDirectory()
 			+ File.separator;
+	/** 获取外部存储设备的当前状态 */
+	public static String SDSTATUS = Environment.getExternalStorageState();
 	/** 根文件夹名称 */
-	public static final String FOLDER = "downTool";
+	public static final String FOLDER = "myframe";
 	/** 文件夹名称:软件根目录 */
 	public static final String FOLDER_BASE = SDCARDROOT + FOLDER;
 	/** 文件夹名称:偏好设置 ? */
@@ -45,9 +47,6 @@ public class FileUtils {
 	public static final String FOLDER_TMP = "tmp";
 	/** 用户下载文档保存的路径 */
 	public static final String FOLDER_DOCUMENT = "document";
-	/** 获取外部存储设备的当前状态 */
-	public static String SDSTATUS = Environment.getExternalStorageState();
-	
 
 	public static boolean isDirExist(String dirPath) {
 		File dir = new File(dirPath);
