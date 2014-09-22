@@ -78,6 +78,7 @@
         
         
         <service android:name=".services.MyService"/>
+        <service android:name=".download.DownloadService"/>
         
         <!-- Needed to check when the network connection changes -->
         <receiver
