@@ -1,6 +1,6 @@
 package com.myheat.frame.common;
 
-public class Constant {
+public class Constants {
 	/**
 	 * 与网络相关的常量定义
 	 * 
@@ -45,7 +45,18 @@ public class Constant {
 
 	// ----------------------------------------------------接口类型定义
 	/** 登录 */
-	public final static String LOGIN = Constant.Net.HOST_NAME
-			+ Constant.Net.VERSION + "/login.php";
+	public final static String LOGIN = Constants.Net.HOST_NAME
+			+ Constants.Net.VERSION + "/login.php";
+	
+	 /** 文件的最大下载线程数*/
+		public static final int MAX_DOWLOAD_THREAD_SIZE = 1;
+		/** 下载一个文件的线程数*/
+		public static final int MAX_FILE_THREAD_SIZE = 2;
+		/** 下载实例对象键名*/
+		public static final String KEY_DOWNLOAD_ENTRTY = "key_download_entrty";
+		/** 下载状态键名*/
+		public static final String KEY_DOWNLOAD_ACTION = "key_download_action";
+		
+		public static final int SERVICE_HANDLER_TAG = 1;
 
 }

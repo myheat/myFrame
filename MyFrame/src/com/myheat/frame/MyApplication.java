@@ -3,6 +3,7 @@ package com.myheat.frame;
 import com.myheat.frame.entities.VersionInfo;
 
 import android.app.Application;
+import android.content.Context;
 import android.content.res.Configuration;
 
 /**
@@ -24,10 +25,18 @@ public class MyApplication extends Application {
 	/** 判断用户是否本地登录 false未登录 true 登录 */
 	public static boolean isLoginFlag = false;
 	
+	public static Context mContext;
+	public static int mAppState;
+
 	@Override
 	public void onCreate() {
-		// TODO Auto-generated method stub
 		super.onCreate();
+		mContext = this.getApplicationContext();
+		mAppState = -1;
+	}
+
+	public synchronized static void setAppState(int state) {
+		mAppState = state;
 	}
 
 	@Override
