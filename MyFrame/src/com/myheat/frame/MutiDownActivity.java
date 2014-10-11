@@ -63,15 +63,6 @@ public class MutiDownActivity extends Activity {
 		// 创建下载目录
 		FileUtils.initFolders();
 		
-		try {
-		
-		DebugLog.d("DBController.getDB()=", "" + DBController.getDB());
-			
-		} catch (DBNotInitializeException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
 		Button download1 = (Button) findViewById(R.id.download1);
 		download1.setOnClickListener(oc);
 		Button pause1 = (Button) findViewById(R.id.pause1);
@@ -101,10 +92,10 @@ public class MutiDownActivity extends Activity {
 			case R.id.download1:
 				entry1 = new DownloadEntry();
 				entry1.setId("123");
-				entry1.setName("weixin");
-				entry1.setFileSize(24390789);
+				entry1.setName("MyFrame");
+				entry1.setFileSize(3098521);
 				entry1.setCreateTime(System.currentTimeMillis());
-				entry1.setUrl("http://bcs.duapp.com/jsontest/weixin.apk");
+				entry1.setUrl("http://www.4162.com/app/MyFrame.apk");
 				String path = FileUtils.getDownloadPath(entry1.getUrl());
 				DebugLog.d("path=", path);
 				entry1.setPath(path);
@@ -119,10 +110,10 @@ public class MutiDownActivity extends Activity {
 			case R.id.download2:
 				entry2 = new DownloadEntry();
 				entry2.setId("124");
-				entry2.setName("gfan");
+				entry2.setName("MyFrame1");
 				entry2.setFileSize(3098521);
 				entry2.setCreateTime(System.currentTimeMillis());
-				entry2.setUrl("http://bcs.duapp.com/jsontest/gfan.apk");
+				entry2.setUrl("http://www.4162.com/app/MyFrame1.apk");
 				String path2 = FileUtils.getDownloadPath(entry2.getUrl());
 				DebugLog.d("path2=", path2);
 				entry2.setPath(path2);

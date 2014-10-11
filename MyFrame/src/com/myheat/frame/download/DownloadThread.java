@@ -6,8 +6,11 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.InflaterInputStream;
+
 import org.apache.http.HttpStatus;
+
 import com.myheat.frame.entities.DownloadEntry;
+import com.myheat.frame.tool.DebugLog;
 
 /**
  * @author myheat
@@ -104,6 +107,7 @@ public class DownloadThread extends Thread {
 				while ((read = in.read(b)) != -1) {
 					downloadedLength += read;
 					file.write(b, 0, read);
+					DebugLog.d("DownloadThread---", index + "====" + downloadedLength);
 					downloadTask.update(index, read, downloadedLength);
 					if (isPaused) {
 						break;
