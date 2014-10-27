@@ -1,4 +1,4 @@
-package com.myheat.frame.http.tool;
+package com.myheat.frame.receivers;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;

@@ -86,7 +86,7 @@
         
         <!-- Needed to check when the network connection changes -->
         <receiver
-            android:name=".http.tool.ConnectionChangeReceiver"
+            android:name="com.myheat.frame.receivers.ConnectionChangeReceiver"
             android:label="NetworkConnection" >
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />

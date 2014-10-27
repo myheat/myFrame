@@ -27,6 +27,9 @@ import android.view.animation.Animation.AnimationListener;
 public class WelcomeActivity extends Activity {
 
 	private AlphaAnimation start_anima;
+	// private WelcomeAdapter welcomeAdapter;
+	int[] imageInt = new int[] { R.drawable.ic_launcher, R.drawable.ic_launcher };
+
 	View view;
 
 	@Override
@@ -38,6 +41,22 @@ public class WelcomeActivity extends Activity {
 
 		view = View.inflate(this, R.layout.welcome, null);
 		setContentView(view);
+		
+		// preferences = getSharedPreferences("isStart", MODE_PRIVATE);
+		// int n = preferences.getInt("num", 0);
+		//
+		// if (n == 0) {
+		// welcomeAdapter = new WelcomeAdapter();
+		// welcomePager = (ViewPager) findViewById(R.id.welcomePager);
+		// welcomePager.setAdapter(welcomeAdapter);
+		// preferences.edit()
+		// .putInt("num", 1)
+		// .commit();
+		// } else {
+		// new Thread(new StarRun()).start();
+		// }
+		
+		
 		initView();
 		initData();
 	}
@@ -159,4 +178,77 @@ public class WelcomeActivity extends Activity {
 		}
 		return null;
 	}
+	
+	
+	// /**
+		// * 滑动页面
+		// *
+		// * @author myheat
+		// *
+		// */
+		// private class WelcomeAdapter extends PagerAdapter {
+		//
+		// @Override
+		// public int getCount() {
+		// return imageInt.length;
+		// }
+		//
+		// @Override
+		// public Object instantiateItem(View collection, int position) {
+		//
+		// View view = getLayoutInflater()
+		// .inflate(R.layout.welcome_page, null);
+		// ImageView imageView = (ImageView) view
+		// .findViewById(R.id.welcome_page_imageId);
+		// imageView.setImageResource(imageInt[position]);
+		//
+		// ((ViewPager) collection).addView(view, 0);
+		// // 监听最后一张引导页
+		// if (position == 4) {
+		// view.setOnClickListener(new View.OnClickListener() {
+		// public void onClick(View v) {
+		// Intent intent = new Intent();
+		// intent.setClass(WelcomeActivity.this,
+		// // MainActivity.class);
+		// BaseActivity.class);
+		// /* intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); */
+		// startActivity(intent);
+		// finish();
+		// }
+		// });
+		//
+		// }
+		// return view;
+		// }
+		//
+		// @Override
+		// public void destroyItem(View collection, int position, Object view) {
+		// ((ViewPager) collection).removeView((View) view);
+		// }
+		//
+		// @Override
+		// public boolean isViewFromObject(View view, Object object) {
+		// return view == ((View) object);
+		// }
+		//
+		// @Override
+		// public void finishUpdate(View arg0) {
+		//
+		// }
+		//
+		// @Override
+		// public void restoreState(Parcelable arg0, ClassLoader arg1) {
+		//
+		// }
+		//
+		// @Override
+		// public Parcelable saveState() {
+		// return null;
+		// }
+		//
+		// @Override
+		// public void startUpdate(View arg0) {
+		//
+		// }
+		// }
 }
